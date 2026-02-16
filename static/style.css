@@ -1,0 +1,257 @@
+body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(to right, #ff9ecb, #ffc0e6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Wrapper */
+.heart-wrapper {
+    position: relative;
+    width: 40vw;
+    height: 40vw;
+    max-width: 600px;
+    max-height: 600px;
+}
+
+/* REAL HEART SHAPE */
+.heart {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    clip-path: path("M300 550 C80 400 20 200 150 130 C240 90 300 170 300 220 C300 170 360 90 450 130 C580 200 520 400 300 550 Z");
+    animation: growHeart 6s forwards ease-in-out;
+    position: relative;
+    overflow: hidden;
+    transform-origin: center;
+}
+
+/* BIGGER GROW */
+@keyframes growHeart {
+    0% {
+        transform: scale(0.2);
+    }
+    100% {
+        transform: scale(1.6);
+    }
+}
+
+/* Content inside heart */
+.heart-content {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 70%;
+}
+
+/* TEXT */
+#loveText {
+    color: white;
+    font-size: 3vw;
+    max-font-size: 42px;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+button {
+    padding: 14px 30px;
+    font-size: 1.3vw;
+    min-font-size: 16px;
+    border-radius: 30px;
+    border: none;
+    background: white;
+    color: #ff4da6;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #ff4da6;
+    color: white;
+}
+
+.hidden {
+    display: none;
+}
+
+
+/* PAGE 2 LAYOUT */
+
+.page2-body {
+    background: linear-gradient(to right, #ff9ecb, #ffc0e6);
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.center-text {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 30px;
+    color: white;
+    text-align: center;
+}
+
+.gallery img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 15px;
+    position: absolute;
+    opacity: 0;
+    animation: popUp 0.8s forwards;
+}
+
+/* Positions */
+.top:nth-child(1) { top: 20px; left: 25%; animation-delay: 0.5s;}
+.top:nth-child(2) { top: 20px; left: 45%; animation-delay: 1s;}
+.top:nth-child(3) { top: 20px; left: 65%; animation-delay: 1.5s;}
+
+.bottom:nth-child(4) { bottom: 20px; left: 25%; animation-delay: 2s;}
+.bottom:nth-child(5) { bottom: 20px; left: 45%; animation-delay: 2.5s;}
+.bottom:nth-child(6) { bottom: 20px; left: 65%; animation-delay: 3s;}
+
+.left:nth-child(7) { left: 20px; top: 30%; animation-delay: 3.5s;}
+.left:nth-child(8) { left: 20px; top: 55%; animation-delay: 4s;}
+
+.right:nth-child(9) { right: 20px; top: 30%; animation-delay: 4.5s;}
+.right:nth-child(10) { right: 20px; top: 55%; animation-delay: 5s;}
+
+/* POP ANIMATION */
+@keyframes popUp {
+    0% { transform: scale(0); opacity: 0;}
+    100% { transform: scale(1); opacity: 1;}
+}
+
+/* Secret Button */
+.secret-btn {
+    position: absolute;
+    bottom: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 12px 25px;
+    border-radius: 25px;
+    border: none;
+    background: white;
+    color: #ff4da6;
+    cursor: pointer;
+}
+
+/* Password Box */
+.password-box {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Message Page */
+.message-page {
+    background: linear-gradient(to right, #ff9ecb, #ffc0e6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.message-box {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+
+/* Romantic Password Box */
+
+.password-box {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(15px);
+    padding: 25px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(255, 105, 180, 0.6);
+    color: white;
+    transition: 0.3s ease;
+}
+
+.password-box input {
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    text-align: center;
+    margin-bottom: 10px;
+    outline: none;
+}
+
+.password-box button {
+    margin: 5px;
+    padding: 8px 18px;
+    border-radius: 20px;
+    border: none;
+    background: white;
+    color: #ff4da6;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.password-box button:hover {
+    background: #ff4da6;
+    color: white;
+}
+
+/* Hint Style */
+.romantic-hint {
+    margin-top: 10px;
+    font-style: italic;
+}
+
+/* WRONG PASSWORD ANIMATION */
+.wrong {
+    animation: shake 0.5s;
+    box-shadow: 0 0 25px red;
+}
+
+@keyframes shake {
+    0% { transform: translateX(-50%) translateX(0); }
+    25% { transform: translateX(-50%) translateX(-10px); }
+    50% { transform: translateX(-50%) translateX(10px); }
+    75% { transform: translateX(-50%) translateX(-10px); }
+    100% { transform: translateX(-50%) translateX(0); }
+}
+
+/* CORRECT PASSWORD STYLE */
+.correct {
+    box-shadow: 0 0 40px hotpink;
+    background: rgba(255, 192, 203, 0.3);
+}
+
+.success-text {
+    font-size: 28px;
+    animation: popLove 0.8s ease;
+}
+
+@keyframes popLove {
+    0% { transform: scale(0); }
+    100% { transform: scale(1); }
+}

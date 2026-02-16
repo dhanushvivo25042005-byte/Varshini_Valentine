@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Forever ❤️</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="page2-body">
+
+<div class="center-text">
+    <h1>You Are My Forever ❤️</h1>
+    <br><br><br><br><br>
+    <button class="secret-btn" onclick="openPassword()">Message For You 💌</button>
+
+    <div id="passwordBox" class="password-box hidden">
+        <input type="password" id="passwordInput" placeholder="Enter Password">
+        <button onclick="checkPassword()">Submit</button>
+        <button onclick="showHint()">Hint</button>
+        <p id="hintText"></p>
+    </div>
+
+</div>
+
+<div class="gallery">
+
+    <!-- Top 3 -->
+    <img src="{{ url_for('static', filename='images/pic1.jpg') }}" class="pop top">
+    <img src="{{ url_for('static', filename='images/pic2.jpeg') }}" class="pop top">
+    <img src="{{ url_for('static', filename='images/pic3.jpg') }}" class="pop top">
+
+    <!-- Bottom 3 -->
+    <img src="{{ url_for('static', filename='images/pic4.jpg') }}" class="pop bottom">
+    <img src="{{ url_for('static', filename='images/pic5.jpg') }}" class="pop bottom">
+    <img src="{{ url_for('static', filename='images/pic6.jpg') }}" class="pop bottom">
+
+    <!-- Left Side -->
+    <img src="{{ url_for('static', filename='images/pic7.jpg') }}" class="pop left">
+    <img src="{{ url_for('static', filename='images/pic8.jpg') }}" class="pop left">
+
+    <!-- Right Side -->
+    <img src="{{ url_for('static', filename='images/pic9.jpg') }}" class="pop right">
+    <img src="{{ url_for('static', filename='images/pic10.jpg') }}" class="pop right">
+
+</div>
+
+
+
+<script>
+function openPassword() {
+    document.getElementById("passwordBox").classList.remove("hidden");
+}
+
+function showHint() {
+    const hint = document.getElementById("hintText");
+    hint.innerText = "Hint: Our anniversary date ❤️";
+    hint.classList.add("romantic-hint");
+}
+
+function checkPassword() {
+    const password = document.getElementById("passwordInput").value;
+    const box = document.getElementById("passwordBox");
+
+    if(password === "16/10/2022") {  // CHANGE THIS
+        box.classList.remove("wrong");
+        box.classList.add("correct");
+
+        box.innerHTML = `
+            <h2 class="success-text">Aww Babe ❤️</h2>
+            <p>You remembered our special day 😘</p>
+        `;
+
+        setTimeout(() => {
+            window.location.href = "/message";
+        }, 2500);
+
+    } else {
+        box.classList.add("wrong");
+        setTimeout(() => {
+            box.classList.remove("wrong");
+        }, 600);
+    }
+}
+</script>
